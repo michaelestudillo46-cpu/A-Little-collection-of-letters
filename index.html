@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Short letters for you, bebe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Cormorant Garamond", serif;
+    color: #57283c;
+
+    background:
+        radial-gradient(circle at 10% 20%, #ffd9e7, transparent 30%),
+        radial-gradient(circle at 90% 80%, #f8c5d8, transparent 30%),
+        linear-gradient(135deg, #fff5f8, #fbd5e2);
+
+    overflow-x: hidden;
+}
+
+
+.background-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+
+    background: rgba(255, 145, 180, .18);
+
+    filter: blur(90px);
+    border-radius: 50%;
+
+    top: 10%;
+    left: 35%;
+
+    animation: glow 8s infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes glow {
+
+    from {
+        transform: translate(-100px, -50px);
+    }
+
+    to {
+        transform: translate(100px, 100px);
+    }
+
+}
+
+.petal {
+    position: fixed;
+
+    top: -30px;
+
+    font-size: 20px;
+
+    opacity: .65;
+
+    animation: fall linear infinite;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+@keyframes fall {
+
+    from {
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
+
+}
+
+.main {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 70px 20px 100px;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+
+.subtitle {
+    font-size: 15px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    color: #a75a75;
+
+    margin-bottom: 8px;
+}
+
+
+.title {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(55px, 9vw, 90px);
+
+    font-weight: normal;
+
+    color: #a83f65;
+
+    margin-bottom: 5px;
+}
+
+
+.description {
+    font-size: 19px;
+
+    color: #805064;
+
+    margin-bottom: 50px;
+}
+
+
+
+.tulips {
+    position: fixed;
+
+    bottom: -10px;
+
+    display: flex;
+
+    gap: 8px;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.tulips.left {
+    left: 15px;
+}
+
+.tulips.right {
+    right: 15px;
+
+    transform: scaleX(-1);
+}
+
+.tulip {
+    position: relative;
+
+    width: 45px;
+    height: 130px;
+}
+
+.flower {
+    position: absolute;
+
+    width: 38px;
+    height: 45px;
+
+    top: 5px;
+    left: 3px;
+
+    background: linear-gradient(
+        135deg,
+        #ffc4d7,
+        #ee7098
+    );
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    box-shadow:
+        inset -5px -5px 8px
+        rgba(160, 40, 80, .15);
+}
+
+.flower::before {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 38px;
+
+    left: 10px;
+
+    background: #ffd5e2;
+
+    border-radius: 50%;
+}
+
+.flower::after {
+    content: "";
+
+    position: absolute;
+
+    width: 13px;
+    height: 35px;
+
+    left: 1px;
+    top: 6px;
+
+    background: #f58baa;
+
+    border-radius: 50%;
+}
+
+.stem {
+    position: absolute;
+
+    width: 5px;
+    height: 90px;
+
+    background: #6f9d69;
+
+    left: 20px;
+    top: 42px;
+
+    border-radius: 10px;
+}
+
+.leaf {
+    position: absolute;
+
+    width: 35px;
+    height: 15px;
+
+    background: #7ca873;
+
+    border-radius:
+        100% 0 100% 0;
+
+    top: 82px;
+    left: -2px;
+
+    transform: rotate(25deg);
+}
+
+
+.letters-container {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+
+
+.letter-card {
+
+    position: relative;
+
+    min-height: 230px;
+
+    padding: 35px 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 249, 251, .78);
+
+    border:
+        1px solid rgba(190, 90, 125, .18);
+
+    box-shadow:
+        0 15px 40px
+        rgba(120, 45, 75, .12);
+
+    backdrop-filter: blur(10px);
+
+    cursor: pointer;
+
+    transition:
+        .4s ease;
+
+    overflow: hidden;
+}
+
+
+.letter-card:hover {
+
+    transform:
+        translateY(-10px)
+        rotate(-1deg);
+
+    box-shadow:
+        0 25px 55px
+        rgba(120, 45, 75, .2);
+
+}
+
+
+
+.mini-envelope {
+
+    width: 100px;
+    height: 70px;
+
+    background: #f4aec5;
+
+    margin: 0 auto 20px;
+
+    position: relative;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(150, 50, 85, .15);
+}
+
+
+.mini-envelope::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    top: 0;
+    left: 0;
+
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 38px solid #e991af;
+
+}
+
+
+.mini-envelope::after {
+
+    content: "♥";
+
+    position: absolute;
+
+    left: 50%;
+    top: 29px;
+
+    transform:
+        translate(-50%, -50%);
+
+    color: white;
+
+    font-size: 18px;
+
+    z-index: 3;
+}
+
+
+.letter-card h2 {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 34px;
+
+    font-weight: normal;
+
+    color: #a33d62;
+
+    margin-bottom: 8px;
+}
+
+
+.letter-card p {
+
+    font-size: 17px;
+
+    color: #795065;
+
+}
+
+
+.card-number {
+
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    color: #d48ba4;
+
+    font-size: 14px;
+
+}
+
+
+
+.overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(65, 25, 42, .45);
+
+    backdrop-filter: blur(7px);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 100;
+}
+
+
+.letter-paper {
+
+    width: min(650px, 95vw);
+
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(255, 252, 247, .98),
+            rgba(255, 248, 244, .98)
+        );
+
+    padding: 60px 55px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 30px 100px
+        rgba(50, 15, 30, .35);
+
+    animation:
+        paperOpen .7s ease;
+}
+
+
+@keyframes paperOpen {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.75)
+            translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+/* paper flowers */
+
+.paper-flower {
+
+    position: absolute;
+
+    font-size: 35px;
+
+    opacity: .85;
+
+}
+
+.paper-flower.one {
+    top: 15px;
+    left: 20px;
+}
+
+.paper-flower.two {
+    top: 15px;
+    right: 20px;
+}
+
+
+.paper-header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.paper-header small {
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    color: #a65b76;
+
+}
+
+
+.paper-header h1 {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 65px;
+
+    font-weight: normal;
+
+    color: #a33d62;
+
+    margin-top: 5px;
+
+}
+
+
+.divider {
+
+    width: 80px;
+
+    height: 1px;
+
+    background: #d58ca5;
+
+    margin: 15px auto;
+
+}
+
+
+.paper-text {
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+}
+
+
+.paper-text p {
+
+    margin-bottom: 20px;
+
+}
+
+
+.greeting {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 34px;
+
+    color: #a33d62;
+
+}
+
+
+.signature {
+
+    text-align: right;
+
+    margin-top: 30px;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 38px;
+
+    color: #a33d62;
+
+}
+
+
+/* close */
+
+.close-btn {
+
+    display: block;
+
+    margin: 35px auto 0;
+
+    border: none;
+
+    background: #b64169;
+
+    color: white;
+
+    padding: 12px 28px;
+
+    border-radius: 30px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.close-btn:hover {
+
+    background: #902f51;
+
+    transform: scale(1.05);
+
+}
+
+
+
+.footer {
+
+    margin-top: 60px;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 30px;
+
+    color: #a33d62;
+
+}
+
+
+@media(max-width:600px) {
+
+    .main {
+        padding-top: 45px;
+    }
+
+    .description {
+        font-size: 17px;
+        margin-bottom: 35px;
+    }
+
+    .letters-container {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+    }
+
+    .letter-paper {
+        padding: 50px 27px;
+    }
+
+    .paper-header h1 {
+        font-size: 52px;
+    }
+
+    .paper-text {
+        font-size: 18px;
+    }
+
+    .tulips {
+        opacity: .55;
+        transform: scale(.7);
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="background-glow"></div>
+
+
+<div class="petal" style="left:5%; animation-duration:9s;">🌸</div>
+<div class="petal" style="left:15%; animation-duration:12s; animation-delay:2s;">🌷</div>
+<div class="petal" style="left:28%; animation-duration:8s; animation-delay:1s;">🌸</div>
+<div class="petal" style="left:42%; animation-duration:11s; animation-delay:4s;">♡</div>
+<div class="petal" style="left:58%; animation-duration:10s; animation-delay:2s;">🌷</div>
+<div class="petal" style="left:72%; animation-duration:13s; animation-delay:3s;">🌸</div>
+<div class="petal" style="left:87%; animation-duration:9s; animation-delay:1s;">🌷</div>
+<div class="petal" style="left:95%; animation-duration:12s;">♡</div>
+
+
+
+<div class="tulips left">
+
+    <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+    </div>
+
+    <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+    </div>
+
+    <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+    </div>
+
+</div>
+
+
+
+<div class="tulips right">
+
+    <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+    </div>
+
+    <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+    </div>
+
+    <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+    </div>
+
+</div>
+
+
+
+<main class="main">
+
+    <div class="subtitle">
+        A Little Collection of
+    </div>
+
+    <h1 class="title">
+        Letters For You, Yen
+    </h1>
+
+    <p class="description">
+        Some things are too beautiful to say only once... 🌷
+    </p>
+
+
+
+
+    <div class="letters-container">
+
+
+        <!-- LETTER 1 -->
+
+        <div class="letter-card"
+             onclick="openLetter(0)">
+
+            <span class="card-number">
+                01
+            </span>
+
+            <div class="mini-envelope"></div>
+
+            <h2>
+                When You Miss Me
+            </h2>
+
+            <p>
+                Open this whenever you wish I was beside you.
+            </p>
+
+        </div>
+
+
+        <!-- LETTER 2 -->
+
+        <div class="letter-card"
+             onclick="openLetter(1)">
+
+            <span class="card-number">
+                02
+            </span>
+
+            <div class="mini-envelope"></div>
+
+            <h2>
+                About You
+            </h2>
+
+            <p>
+                A little reminder of what makes you special.
+            </p>
+
+        </div>
+
+
+        <!-- LETTER 3 -->
+
+        <div class="letter-card"
+             onclick="openLetter(2)">
+
+            <span class="card-number">
+                03
+            </span>
+
+            <div class="mini-envelope"></div>
+
+            <h2>
+                Before You Sleep
+            </h2>
+
+            <p>
+                Something sweet to read before closing your eyes.
+            </p>
+
+        </div>
+
+
+        <!-- LETTER 4 -->
+
+        <div class="letter-card"
+             onclick="openLetter(3)">
+
+            <span class="card-number">
+                04
+            </span>
+
+            <div class="mini-envelope"></div>
+
+            <h2>
+                Things I Love
+            </h2>
+
+            <p>
+                A few of the countless things I adore about you.
+            </p>
+
+        </div>
+
+
+        <!-- LETTER 5 -->
+
+        <div class="letter-card"
+             onclick="openLetter(4)">
+
+            <span class="card-number">
+                05
+            </span>
+
+            <div class="mini-envelope"></div>
+
+            <h2>
+                My Promise
+            </h2>
+
+            <p>
+                A promise from my heart to yours.
+            </p>
+
+        </div>
+
+
+        <!-- LETTER 6 -->
+
+        <div class="letter-card"
+             onclick="openLetter(5)">
+
+            <span class="card-number">
+                06
+            </span>
+
+            <div class="mini-envelope"></div>
+
+            <h2>
+                Just Because
+            </h2>
+
+            <p>
+                Because sometimes I just want to remind you.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer">
+        I Love You, always.🐈🌷
+    </div>
+
+</main>
+
+
+
+<div class="overlay" id="overlay">
+
+    <div class="letter-paper">
+
+        <div class="paper-flower one">
+            🌷
+        </div>
+
+        <div class="paper-flower two">
+            🌷
+        </div>
+
+
+        <div class="paper-header">
+
+            <small>
+                
+            </small>
+
+            <h1 id="letterTitle">
+                For You
+            </h1>
+
+            <div class="divider"></div>
+
+        </div>
+
+
+        <div class="paper-text" id="letterText">
+        </div>
+
+
+        <button class="close-btn"
+                onclick="closeLetter()">
+
+            Close Letter ♡
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+
+const letters = [
+
+    {
+
+        title: "When You Miss Me",
+
+        text: `
+        <p class="greeting">
+            My dearest yen,
+        </p>
+
+        <p>
+            If you're reading this because you miss me,
+            I hope you know that I probably miss you too.
+        </p>
+
+        <p>
+            Distance can make things difficult sometimes,
+            but it can never change how much you mean to me.
+            Even when I'm not beside you, a part of my heart
+            is always with you.
+        </p>
+
+        <p>
+            So whenever you miss me, close your eyes for a
+            moment and imagine me holding your hand,
+            telling you that everything will be okay.
+        </p>
+
+        <p>
+            Until the day we don't have to miss each other
+            anymore, please remember that you are loved.
+        </p>
+
+        <div class="signature">
+           I Love You So Much, Yen. 🐈🌷
+        </div>
+        `
+
+    },
+
+
+    {
+
+        title: "About You",
+
+        text: `
+        <p class="greeting">
+            My dearest yen,
+        </p>
+
+        <p>
+            Do you know what's beautiful about you?
+            It's not just one thing.
+        </p>
+
+        <p>
+            It's the way you talk, the way you laugh,
+            the little things you do without realizing them,
+            and the way you somehow make my ordinary days
+            feel special.
+        </p>
+
+        <p>
+            To me, you are someone incredibly special, 
+            someone I will always be grateful to love
+        </p>
+
+        <p>
+            And if you ever forget how special you are,
+            come back to this letter.
+        </p>
+
+        <div class="signature">
+            I hope you never forget,<br>
+            You are precious to me. 🐈🌷
+        </div>
+        `
+
+    },
+
+
+    {
+
+        title: "Before You Sleep",
+
+        text: `
+        <p class="greeting">
+            Goodnight, Yen.
+        </p>
+ 
+        <p>
+            Before you close your eyes tonight,
+            I want you to know that I'm proud of you.
+        </p>
+
+        <p>
+            Whatever happened today, you made it through.
+            And that's already something worth being proud of.
+        </p>
+
+        <p>
+            So let your worries rest for tonight.
+            You don't need to figure everything out right now.
+        </p>
+
+        <p>
+            Get some rest, breathe slowly, and remember
+            that tomorrow is another chance for beautiful
+            things to happen.
+        </p>
+
+        <p>
+            Sleep peacefully, okay?
+        </p>
+
+        <div class="signature">
+            Sweet dreams, Bebe. <br>
+            
+        </div>
+        `
+
+    },
+
+
+    {
+
+        title: "Things I Love",
+
+        text: `
+        <p class="greeting">
+            There are so many...
+        </p>
+
+        <p>
+            I love the way you make me smile without even
+            trying.
+        </p>
+
+        <p>
+            I love our conversations, even the random ones
+            that don't make sense.
+        </p>
+
+        <p>
+            I love the little moments that we share,
+            because somehow those moments become some
+            of my favorite memories.
+        </p>
+
+        <p>
+            I love how you became someone I look forward
+            to talking to.
+        </p>
+
+        <p>
+            And most of all, I love that I get to know you,
+            little by little, every day.
+        </p>
+
+        <div class="signature">
+            There will always be more reasons.<br>
+            🌷
+        </div>
+        `
+
+    },
+
+
+    {
+
+        title: "My Promise",
+
+        text: `
+        <p class="greeting">
+            My promise to you,
+        </p>
+
+        <p>
+            I can't promise that everything will always be
+            easy.
+        </p>
+
+        <p>
+            But I can promise that I'll try.
+        </p>
+
+        <p>
+            I'll try to understand you when things get
+            difficult. I'll listen when you need someone.
+            I'll celebrate your happiness and stay beside
+            you when things aren't going your way.
+        </p>
+
+        <p>
+            I promise to appreciate the little things,
+            because someday those little things will become
+            the memories we treasure the most.
+        </p>
+
+        <p>
+            And whenever life gets complicated,
+            I always remind myself why I chose you in the first place.
+        </p>
+
+        <div class="signature">
+            My heart chooses you.<br>
+            Always.
+        </div>
+        `
+
+    },
+
+
+    {
+
+        title: "Just Because",
+
+        text: `
+        <p class="greeting">
+            Just because...
+        </p>
+
+        <p>
+            I wanted to remind you that I love you.
+        </p>
+
+        <p>
+            Not because it's a special day.
+            Not because something happened.
+        </p>
+
+        <p>
+            Just because you crossed my mind,
+            and whenever you do, I can't help but smile. 
+        </p>
+
+        <p>
+            You have become one of the sweetest parts
+            of my life, and I never want you to forget that.
+        </p>
+
+        <p>
+            So here's your random reminder:
+            you are loved, appreciated, missed,
+            and thought about more than you probably realize.
+        </p>
+
+        <div class="signature">
+            Just because I love you, Yenn. 🌷<br>
+            
+        </div>
+        `
+
+    }
+
+];
+
+
+function openLetter(index) {
+
+    const overlay =
+        document.getElementById("overlay");
+
+    const title =
+        document.getElementById("letterTitle");
+
+    const text =
+        document.getElementById("letterText");
+
+
+    title.innerHTML =
+        letters[index].title;
+
+    text.innerHTML =
+        letters[index].text;
+
+
+    overlay.style.display =
+        "flex";
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+
+function closeLetter() {
+
+    const overlay =
+        document.getElementById("overlay");
+
+
+    overlay.style.display =
+        "none";
+
+    document.body.style.overflow =
+        "auto";
+
+}
+
+
+document.getElementById("overlay")
+.addEventListener("click", function(event) {
+
+    if (event.target === this) {
+
+        closeLetter();
+
+    }
+
+});
+
+</script>
+
+
+</body>
+</html>
